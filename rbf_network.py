@@ -79,7 +79,7 @@ class rbf_network:
         if (self.basis == 'inv_mult'):
             return np.sqrt(1.0/(1.0+beta*r**2))
 
-    # Train network
+    ### Train network
     def train(self):
 
         # Compute centers and weights
@@ -134,7 +134,7 @@ class rbf_network:
                                       rcond = 1e-15)
         self.weights = np.dot(inv, self.centers_y)
 
-    # Predict once network is trained
+    ### Predict once network is trained
     def predict(self, x):
 
         # Compute matrix and make prediction
@@ -143,7 +143,7 @@ class rbf_network:
 
         return y
 
-    # Compute interpolation matrix
+    ### Compute interpolation matrix
     def compute_matrix(self, x):
 
         # Interpolation matrix
@@ -163,8 +163,8 @@ class rbf_network:
 
         return matrix
 
-    # Add data to the dataset
-    # (x,y) should be a pair of (input,output)
+    ### Add data to the dataset
+    ### (x,y) should be a pair of (input,output)
     def add_data(self, x, y):
 
         # Stack into arrays
@@ -179,7 +179,7 @@ class rbf_network:
         # Training is not to date
         self.to_date = False
 
-# Drop dataset
+    ### Drop dataset
     def drop_dataset(self):
 
         # Set filename
@@ -197,7 +197,7 @@ class rbf_network:
                 f.write('{} '.format(float(self.dataset_out[i])))
                 f.write('\n')
 
-    # Read dataset
+    ### Read dataset
     def read_dataset(self,
                      filename):
 
@@ -235,7 +235,7 @@ class rbf_network:
                          dataset_out  = dataset_out,
                          dataset_file = filename)
 
-    # Drop rbf
+    ### Drop rbf
     def drop_rbf(self):
 
         # Set filename
@@ -260,7 +260,7 @@ class rbf_network:
                 f.write('{} '.format(float(self.betas[i])))
                 f.write('\n')
 
-    # Read rbf
+    ### Read rbf
     def read_rbf(self,
                  filename):
 
