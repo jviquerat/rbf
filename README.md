@@ -1,4 +1,4 @@
-# rbf_network
+# rbf
 
 An implementation of a simple radial basis function network. Given the final purpose of this implementation, the center selection is made directly from the samples (no k-means clustering).
 
